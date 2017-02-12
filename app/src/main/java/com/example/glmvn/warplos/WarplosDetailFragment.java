@@ -6,13 +6,14 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class WarplosDetailFragment extends Fragment {
-
+    private long warplosID;
 
     public WarplosDetailFragment() {
         // Required empty public constructor
@@ -26,4 +27,20 @@ public class WarplosDetailFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_warplos_detail, container, false);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        View view = getView();
+        if (view != null){
+            TextView title =  view.findViewById(R.id.textTittle);
+            WarPlosData warPlosData = WarPlosData.warplosdata[(int) warplosID];
+            title.setText(warPlosData.getmName());
+            TextView description = view.findViewById(R.id.textDescription);
+            description.setText(warPlosData.getmDescription());
+        }
+    }
+
+    public void setWarplosID(long id){
+        this.warplosID = id;
+  }
 }
