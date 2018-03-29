@@ -1,0 +1,37 @@
+package com.example.glmvn.warplos;
+
+
+import android.os.Bundle;
+import android.app.ListFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+
+
+/**
+ * A simple {@link ListFragment} subclass.
+ */
+public class WarplosListFragment extends ListFragment {
+
+
+    public WarplosListFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        String[] nama = new String[WarPlosData.warplosdata.length];
+        for (int i = 0; i < nama.length; i++){
+            nama [i] = WarPlosData.warplosdata[i].getmName();
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                inflater.getContext(), android.R.layout.simple_list_item_1 , nama
+        );
+        setListAdapter(adapter);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+}
