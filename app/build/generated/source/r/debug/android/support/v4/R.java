@@ -87,9 +87,9 @@ public final class R {
         public static final int bottom = 0x7f070022;
         public static final int cancel_action = 0x7f070024;
         public static final int chronometer = 0x7f07002a;
-        public static final int end = 0x7f070036;
-        public static final int end_padder = 0x7f070037;
-        public static final int forever = 0x7f07003d;
+        public static final int end = 0x7f070035;
+        public static final int end_padder = 0x7f070036;
+        public static final int forever = 0x7f07003c;
         public static final int icon = 0x7f070040;
         public static final int icon_group = 0x7f070041;
         public static final int info = 0x7f070044;
