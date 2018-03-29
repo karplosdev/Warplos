@@ -23,6 +23,9 @@ public class WarplosDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (savedInstanceState != null){
+            warplosID = savedInstanceState.getLong("warplosID");
+        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_warplos_detail, container, false);
     }
@@ -38,6 +41,11 @@ public class WarplosDetailFragment extends Fragment {
             TextView description = view.findViewById(R.id.textDescription);
             description.setText(warPlosData.getmDescription());
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putLong("warplosID",warplosID);
     }
 
     public void setWarplosID(long id){
